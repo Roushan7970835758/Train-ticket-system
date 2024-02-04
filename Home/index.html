@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Railway Ticket Booking System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<h1 id="home">HOME</h1>
+    <section id="tableAggregateSection">
+        <h1>Table Aggregate Section</h1>
+        <div class="table-aggregate-section">
+            <div class="table-aggregate-container">
+              <table id="table-aggregate">
+                <thead>
+                  <tr>
+                    <th>Class</th>
+                    <th>Tickets Booked</th>
+                    <th>&nbsp &nbsp &nbsp Sales</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Sleeper Class </td>
+                    <td> &nbsp &nbsp &nbsp &nbsp &nbsp 50</td>
+                    <td>&nbsp &nbsp &nbsp 500</td>
+                  </tr>
+                  <tr>
+                    <td>Class 3A </td>
+                    <td>&nbsp &nbsp &nbsp &nbsp &nbsp 30</td>
+                    <td>&nbsp &nbsp &nbsp 300</td>
+                  </tr>
+                  <tr>
+                    <td>Class 2A</td>
+                    <td>&nbsp &nbsp &nbsp &nbsp &nbsp 20</td>
+                    <td>&nbsp &nbsp &nbsp 200</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+    </section>
+
+    <section id="bookTicketSection">
+        <h1>Book Ticket</h1>
+        <div class="book-ticket-container">
+            <form id="book-ticket-form">
+              <div class="book-ticket-form-group">
+                <label>ID</label>
+                <input id="id" type="text" placeholder="Enter Id">
+              </div>
+      
+              <div class="book-ticket-form-group">
+                <label>Name</label>
+                <input id="name" type="text" placeholder="Enter Name">
+              </div>
+      
+              <div class="book-ticket-form-group">
+                <label>Mobile</label>
+                <input id="mobile" type="text" placeholder="Enter Mobile">
+              </div>
+      
+              <div class="book-ticket-form-group">
+                <label>Age</label>
+                <input id="age" type="text" placeholder="Enter Age">
+              </div>
+      
+              <div class="book-ticket-form-group">
+                <label>Date</label>
+                <input id="date" type="date" placeholder="Enter Date">
+              </div>
+      
+              <div class="book-ticket-form-group">
+                <label>Boarding Station</label>
+                <input id="boarding-station" type="text" placeholder="Enter Boarding Station">
+              </div>
+      
+              <div class="book-ticket-form-group">
+                <label>Destination Station</label>
+                <input id="destination-station" type="text" placeholder="Enter Destination Station">
+              </div>
+      
+              <div class="book-ticket-form-group">
+                <label>Ticket Category</label>
+                <select id="ticket-category">
+                  <option value="first-class">First Class</option>
+                  <option value="ac-tier-1">AC Tier 1</option>
+                  <option value="ac-tier-2">AC Tier 2</option>
+                  <option value="tatkal">Tatkal</option>
+                </select>
+              </div>
+      
+              <div class="book-ticket-form-group">
+                <label>Trains Available</label>
+                <select id="trains-available"></select>
+              </div>
+      
+              <div class="book-ticket-form-group">
+                <label>Number of Tickets</label>
+                <input id="num-tickets" type="number" placeholder="Enter Number of Tickets">
+              </div>
+            </form>
+      
+            <div id="booking-confirmation-page"></div>
+          </div>
+        <button class="button" onclick="submitBooking()">Submit Booking</button>
+
+        <!-- Booking Confirmation Box -->
+        <div id="bookingConfirmationBox" class="confirmation-box">
+            <h3>Booking Confirmation</h3>
+            <p>Your booking ID: <span id="bookingID"></span></p>
+            <p>Boarding Station: <span id="boardingStation"></span></p>
+            <p>Destination Station: <span id="destinationStation"></span></p>
+            <p>PNR Number: <span id="pnrNumber"></span></p>
+            <!-- Add other essential booking details here -->
+        </div>
+    </section>
+
+    <section id="viewTicketSection">
+        <h1>View Ticket</h1>
+        <div> Ticket ID: 12345abcd</div>
+        <div> Train ID: 2457</div>
+        <div> User ID: 345267</div>
+        <div> User Name: Roushan Kumar</div>
+        <div> Boarding Station: Patna</div>
+        <div> Destination Station: Howra</div>
+        <div> Boarding Date and Time: 08/02/2024,05:32PM</div>
+        <div> Arrival Date and Time: 09/02/2024,07:32AM</div>
+        <div> Number of tickets: 5</div>
+        <button class="button" onclick="cancelTicket()">Cancel Ticket</button>
+
+        <!-- Cancellation Confirmation Box -->
+        <div id="cancellationConfirmationBox" class="confirmation-box">
+            <h3>Cancellation Confirmation</h3>
+            <p>Are you sure you want to cancel this ticket?</p>
+            <button class="button" onclick="confirmCancellation()">Confirm</button>
+            <button class="button" onclick="cancelCancellation()">Cancel</button>
+        </div>
+    </section>
+
+    <section id="updateDetailsSection">
+        <h1>Update Details</h1>
+        
+        <form id="update-ticket-form">
+            <div class="update-ticket-form-group">
+              <label>Email ID &nbsp</label>
+              <input id="id" type="email" placeholder="roushan.4@tcs.com">
+            </div>
+
+            
+            <div class="update-ticket-form-group">
+                <label>Mobile Number &nbsp</label>
+                <input id="id" type="number" placeholder="7970835758">
+            </div>
+            <p>Address</p>
+            <div class="update-ticket-form-group">
+                <label>  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp </label>
+                <textarea  id="id" cols="30" rows="5" placeholder="Write ur updated address."></textarea>
+            </div>
+        </form>
+        
+        
+        <div>
+            <input type="checkbox" id="updatePasswordCheckbox" onclick="togglePasswordFields()"> Update Password
+        </div>
+        <div id="passwordFields" style="display:none;">
+            <div> Current Password: <strong>Roushan@123</strong></div>
+            <form id="update-ticket-form-password">
+                <div class="update-ticket-form-password-group">
+                    <label>New Password &nbsp</label>
+                    <input id="id" type="password" >
+                </div>
+
+                <div class="update-ticket-form-password-group">
+                    <label>Conform Password &nbsp</label>
+                    <input id="id" type="password" >
+                </div>
+
+            </form>
+            
+            
+        </div>
+        <button class="button" onclick="updateDetails()">Update Details</button>
+    </section>
+
+    <section id="logoutSection">
+        <h1>Logout</h1>
+        <button class="button" onclick="logout()">Logout</button>
+    </section>
+
+    
+
+</body>
+<script src="script.js"></script>
+</html>
